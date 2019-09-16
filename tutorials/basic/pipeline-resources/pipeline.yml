@@ -1,23 +1,20 @@
 ---
 resources:
-  - name: resource-tutorial
+  - name: cbtutorial
     type: git
     source:
-      uri: https://github.com/starkandwayne/concourse-tutorial.git
-      branch: develop
-
+      uri: https://github.com/cwb124/tutorial.git
+      branch: master
 jobs:
   - name: job-hello-world
     public: true
     plan:
-      - get: resource-tutorial
+      - get: cbtutorial
       - task: hello-world
-        file: resource-tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
-
-jobs:
+        file: tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
   - name: job-test-add
     public: true
     plan:
-      - get: resource-tutorial
+      - get: cbtutorial
       - task: test-add
-        file: resource-tutorial/tutorials/basic/basic/temp/test.yml
+        file: tutorial/tutorials/basic/temp/test.yml
