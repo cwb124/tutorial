@@ -1,6 +1,6 @@
 ---
 resources:
-  - name: cbtutorial
+  - name: tutorial
     type: git
     source:
       uri: https://github.com/cwb124/tutorial.git
@@ -9,12 +9,12 @@ jobs:
   - name: job-hello-world
     public: true
     plan:
-      - get: cbtutorial
+      - get: tutorial
       - task: hello-world
         file: tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
   - name: job-test-add
     public: true
     plan:
-      - get: cbtutorial
+      - get: tutorial
       - task: test-add
         file: tutorial/tutorials/basic/temp/test.yml
